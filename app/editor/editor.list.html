@@ -1,0 +1,5 @@
+<ul class="list--no-bullets txt--select-none" click-elsewhere="selectNone()">
+  <li ng-repeat="phrase in (filteredPhrases = (phrases | limitTo: phraseLimit | orderBy: phraseOrder))">
+    <edit-item phrase="phrase" editor="editor" index="filteredPhrases[$index]"></edit-item>
+  </li>
+</ul>

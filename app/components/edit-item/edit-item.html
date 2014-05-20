@@ -1,0 +1,57 @@
+<ul class="edit-item"
+  ng-class="{
+    'is-focused': selected,
+    'is-unfocused': !selected && editor.anItemSelected,
+    'edit-item--translated': phrase.status == 'translated',
+    'edit-item--unsure': phrase.status == 'fuzzy'
+  }">
+  <li class="edit-item__panel edit-item__source">
+    <header class="edit-item__header toolbar" ng-show="selected">
+      <h3 class="edit-item__heading">Source</h3>
+      <div class="l--float-right">
+      <button class="toolbar__button toolbar__button--top l--float-right" title="Copy source to translation" ng-click="phrase.translation = phrase.source"><i class="i i--arrow-right"></i></button>
+      </div>
+    </header>
+    <div class="edit-field edit-item__field">
+      <div highlight source="phrase.source" class="edit-field__readonly"></div>
+    </div>
+    <footer class="edit-item__footer toolbar" ng-show="selected">
+
+    </footer>
+  </li>
+  <li class="edit-item__panel edit-item__source edit-item__source--vertical" ng-show="settings.verticalSource && selected">
+    <header class="edit-item__header toolbar">
+      <h3 class="edit-item__heading">Source</h3>
+      <div class="l--float-right">
+      <button class="toolbar__button toolbar__button--top l--float-right" ng-click="phrase.translation = phrase.source"><i class="i i--arrow-right"></i></button>
+      </div>
+    </header>
+    <div class="edit-field edit-item__field">
+      <div highlight source="phrase.source" class="edit-field__readonly"></div>
+    </div>
+  </li>
+  <li class="edit-item__panel edit-item__translation">
+    <div class="edit-item__status" title="{{phrase.status}}">{{status}}</div>
+    <header class="edit-item__header toolbar" ng-show="selected">
+      <h3 class="edit-item__heading">Translation</h3>
+      <button class="toolbar__button toolbar__button--top l--float-right" ng-click="settings.verticalSource = !settings.verticalSource" ng-class="{'is-active': settings.verticalSource}"><i class="i i--code"></i></button>
+    </header>
+    <edit-field edit-source="phrase.translation" selected="selected" index="$index" editor="editor" class="edit-item__field"></edit-field>
+    <footer class="edit-item__footer toolbar" ng-show="selected">
+      <div class="l--float-right">
+        <div class="dropdown" ng-class="{'is-active': showDropdown}">
+          <button class="toolbar__button toolbar__button--success" title="ctrl + enter">Save as translated</button>
+          <button type="button" class="toolbar__button toolbar__button--success toolbar__button__toggle" data-toggle="dropdown" ng-click="showDropdown = !showDropdown">
+            <i class="i i--arrow-down"></i>
+            <span class="is-sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown__content" role="menu">
+            <li><a href="#">Save as fuzzy</a></li>
+            <li><a href="#">Save as approved</a></li>
+            <li><a href="#">Save as suggestion</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </li>
+</ul>

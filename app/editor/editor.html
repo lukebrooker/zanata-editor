@@ -1,0 +1,18 @@
+<div class="l--push-all-half">
+  <h3 class="l--push-all-0">Test</h3>
+</div>
+<ul class="list--no-bullets txt--select-none" click-elsewhere="selectNone()">
+  <li ng-repeat="phrase in (filteredPhrases = (phrases | limitTo: phrasesOptions.limit | orderBy: phrasesOptions.order))">
+    <edit-item
+      phrase="phrase"
+      editor="editor"
+      index="$index"
+      selected="editor.selectedIndex == $index"
+      settings="currentUser.settings.editor"
+      ng-click="activate($index, $event)">
+    </edit-item>
+  </li>
+</ul>
+<!-- <div class="l--push-h-half l--push-v-2">
+  <a ui-sref="main">Go home</a>
+</div> -->

@@ -1,0 +1,20 @@
+<div class="edit-field">
+  <textarea
+    rows="1"
+    placeholder="Enter a translation…"
+    msd-elastic
+    class="edit-field__underlay mousetrap"
+    spellcheck="true"
+    ng-model="source"
+    ng-focus="updateCursor($event)"
+    ng-blur="updateCursor($event)"
+    ng-keydown="keydown($event)"
+    ng-keyup="updateCursor($event)"
+    ng-mousedown="updateCursor($event)"
+    ng-mouseup="updateCursor($event)"
+    ng-mousemove="updateCursor($event)"
+    ng-trim="false">
+  </textarea>
+  <highlight class="edit-field__overlay" source="display"></highlight>
+  <div class="edit-field__overlay edit-field__cursor-text" ng-show="focus" ng-bind-html="cursor | trusted"></div>
+</div>
