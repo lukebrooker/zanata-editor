@@ -1,0 +1,7 @@
+.cfp-hotkeys-container {
+  opacity: 0;
+}
+
+.cfp-hotkeys-container.fade.in {
+  opacity: 1;
+}

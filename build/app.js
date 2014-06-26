@@ -1,8 +1,7 @@
 'use strict';
 
 var zanataApp = angular.module('zanataApp',
-    ['ngRoute',
-    'ui.router',
+    ['ui.router',
     'zanataMain',
     'zanataEditor',
     'componentUser',
@@ -48,8 +47,7 @@ zanataApp.controller('ZanataCtrl', function ($scope, hotkeys) {
 'use strict';
 
 var zanataEditor = angular.module('zanataEditor',
-  ['ngRoute',
-   'ui.router',
+  ['ui.router',
    'componentPhrase',
    'componentEditItem',
    'componentClickElsewhere',
@@ -186,7 +184,7 @@ zanataEditor.controller('EditorCtrl', function ($scope, $timeout, hotkeys, Phras
 
 'use strict';
 
-var zanataMain = angular.module('zanataMain', ['ngRoute', 'ui.router'])
+var zanataMain = angular.module('zanataMain', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider

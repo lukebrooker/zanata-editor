@@ -1,6 +1,6 @@
 'use strict';
 
-var zanataMain = angular.module('zanataMain', ['ngRoute', 'ui.router'])
+var zanataMain = angular.module('zanataMain', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider

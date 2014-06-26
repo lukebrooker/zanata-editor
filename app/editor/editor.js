@@ -1,8 +1,7 @@
 'use strict';
 
 var zanataEditor = angular.module('zanataEditor',
-  ['ngRoute',
-   'ui.router',
+  ['ui.router',
    'componentPhrase',
    'componentEditItem',
    'componentClickElsewhere',

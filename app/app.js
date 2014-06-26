@@ -1,8 +1,7 @@
 'use strict';
 
 var zanataApp = angular.module('zanataApp',
-    ['ngRoute',
-    'ui.router',
+    ['ui.router',
     'zanataMain',
     'zanataEditor',
     'componentUser',
