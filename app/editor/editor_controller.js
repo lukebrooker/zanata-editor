@@ -1,6 +1,6 @@
 'use strict';
 
-zanataEditor.controller('EditorCtrl', function ($scope, $timeout, hotkeys, PhraseService) {
+zanataEditor.controller('EditorCtrl', function($scope, $timeout, hotkeys, PhraseService) {
 
   $scope.editor = {
     anItemSelected: false,
@@ -8,11 +8,11 @@ zanataEditor.controller('EditorCtrl', function ($scope, $timeout, hotkeys, Phras
   },
   $scope.phrasesOptions = {
     order: 'id',
-    limit: 20
+    limit: 100
   };
 
   function findAllPhrases(limit) {
-    PhraseService.findAll(limit).then(function (phrases) {
+    PhraseService.findAll(limit).then(function(phrases) {
       $scope.phrases = phrases;
     });
   }

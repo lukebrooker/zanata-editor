@@ -31,12 +31,23 @@
     </div>
   </li>
   <li class="edit-item__panel edit-item__translation">
-    <div class="edit-item__status" title="{{phrase.status}}">{{status}}</div>
     <header class="edit-item__header toolbar" ng-show="selected">
       <h3 class="edit-item__heading">Translation</h3>
-      <button class="toolbar__button toolbar__button--top l--float-right" ng-click="settings.verticalSource = !settings.verticalSource" ng-class="{'is-active': settings.verticalSource}"><i class="i i--code"></i></button>
     </header>
     <edit-field edit-source="phrase.translation" selected="selected" index="$index" editor="editor" class="edit-item__field"></edit-field>
+    <div class="edit-field">
+      <textarea
+        rows="1"
+        placeholder="Enter a translation…"
+        msd-elastic
+        selected="selected"
+        ng-bind="phrase.translation"
+        class="edit-field__underlay mousetrap"
+        spellcheck="true"
+        index="$index" editor="editor" class="edit-item__field"
+        ng-model="source">
+      </textarea>
+    </div>
     <footer class="edit-item__footer toolbar" ng-show="selected">
       <div class="l--float-right">
         <div class="dropdown" ng-class="{'is-active': showDropdown}">

@@ -55,7 +55,17 @@ gulp.task('copy-index', function() {
     .pipe(gulp.dest('./build'));
 });
 
-gulp.task('watch', function(){
+gulp.task('build',['scripts','templates','css','copy-index','bowerJS','bowerCSS']);
+
+gulp.task('connect', plugins.connect.server({
+  root: ['build'],
+  port: 9000,
+  livereload: true
+}));
+
+gulp.task('serve',['build','connect']);
+
+gulp.task('watch', ['serve'], function(){
   gulp.watch([
     'build/**/*.html',
     'build/**/*.js',
@@ -70,10 +80,4 @@ gulp.task('watch', function(){
   gulp.watch('./app/index.html',['copy-index']);
 });
 
-gulp.task('connect', plugins.connect.server({
-  root: ['build'],
-  port: 9000,
-  livereload: true
-}));
-
-gulp.task('default',['connect','scripts','templates','css','copy-index','bowerJS','bowerCSS','watch']);
+gulp.task('default',['build']);

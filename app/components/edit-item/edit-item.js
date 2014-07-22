@@ -1,6 +1,6 @@
 'use strict';
 
-var componentEditItem = angular.module('componentEditItem', ['componentEditField', 'cfp.hotkeys'])
+var componentEditItem = angular.module('componentEditItem', ['cfp.hotkeys'])
   .config(function () {
 
   });

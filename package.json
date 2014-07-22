@@ -1,18 +1,27 @@
 {
-  "name": "Zanata",
+  "name": "zanata-client",
   "version": "0.0.1",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lukebrooker/zanata-ng.git"
+  },
+  "scripts": {
+    "setup": "make setup",
+    "watch": "make watch",
+    "make": "make build"
+  },
   "devDependencies": {
-    "gulp": "~3.6.2",
-    "gulp-concat": "~2.1.7",
-    "gulp-jshint": "~1.5.0",
-    "gulp-load-plugins": "~0.4.0",
+    "gulp": "^3.6.2",
+    "gulp-concat": "^2.1.7",
+    "gulp-jshint": "^1.5.0",
+    "gulp-load-plugins": "^0.4.0",
     "gulp-angular-templatecache": "^1.1.0",
     "gulp-connect": "^1.0.7",
     "karma": "^0.12.1",
     "karma-jasmine": "^0.1.5",
     "karma-chrome-launcher": "^0.1.2",
-    "gulp-bower-files": "~0.2.2",
-    "gulp-clean": "~0.2.4"
+    "gulp-bower-files": "^0.2.2",
+    "gulp-clean": "^0.2.4"
   }
 }
